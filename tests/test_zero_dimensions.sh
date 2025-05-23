@@ -1,17 +1,20 @@
 #!/bin/bash
 
-height=45
-width=23
-length=0
+for dimensions in "45 23 0" "0 23 45" "45 0 23"; do
+    set -- $dimensions
 
-expected_result=0
+    height=$1
+    width=$2
+    length=$3
 
-result=$(./volume.sh "$height" "$width" "$length")
+    expected_result=0
 
-if [[ "$result" == "$expected_result" ]]; then
-    echo "✅ PASS: $height x $width x $length = $result"
-    exit 0
-else
-    echo "❌ FAIL: expected $expected_result, got $result"
-    exit 1
-fi
+    result=$(./volume.sh "$height" "$width" "$length")
+
+    if [[ "$result" == "$expected_result" ]]; then
+        echo "✅ PASS: $height x $width x $length = $result"
+    else
+        echo "❌ FAIL: for $dimensions, expected $expected_result, got $result"
+        exit 1
+    fi
+done
