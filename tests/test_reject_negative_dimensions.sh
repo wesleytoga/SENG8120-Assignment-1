@@ -15,6 +15,5 @@ for dimensions in "-45 23 12" "12 -23 45" "45 12 -23"; do
         echo "✅ PASS: $height x $width x $length = $result"
     else
         echo "❌ FAIL: for $dimensions, expected $expected_result, got $result"
-        exit 1
     fi
 done

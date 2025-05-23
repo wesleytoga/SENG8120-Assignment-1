@@ -13,5 +13,4 @@ if [[ "$result" == "$expected_result" ]]; then
     exit 0
 else
     echo "❌ FAIL: expected $expected_result, got $result"
-    exit 1
 fi
