@@ -9,7 +9,7 @@ for dimensions in "-45 23 12" "12 -23 45" "45 12 -23"; do
 
     expected_result="Error: Negative dimensions not allowed"
 
-    result=$(./volume.sh "$height" "$width" "$width")
+    result=$(./volume.sh "$height" "$width" "$length")
 
     if [[ "$result" == "$expected_result" ]]; then
         echo "✅ PASS: $height x $width x $length = $result"
