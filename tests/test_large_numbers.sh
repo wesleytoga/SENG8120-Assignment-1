@@ -4,7 +4,7 @@ height=1000000
 width=48989232
 length=12892392
 
-expected_result="4399084216819245056"
+expected_result="631588382722944000000"
 
 result=$(./volume.sh "$height" "$width" "$length")
 
