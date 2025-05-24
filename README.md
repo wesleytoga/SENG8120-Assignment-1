@@ -47,6 +47,12 @@ There are 5 implemented tests in the test folder. You can run the test cases fro
 ./tests/test_zero_dimensions.sh
 ```
 
+You can run all the tests at once by running this:
+
+```bash
+./run-all-tests.sh
+```
+
 Ensure you have given the files or folder permission:
 ```bash
 chmod +x *.sh
