@@ -5,7 +5,14 @@ function calculate_volume() {
     local width=$2
     local length=$3
 
-    local volume=$((height * width * length))
+    if [[ $(echo "$height < 0" | bc -l) -eq 1 || \
+          $(echo "$width < 0" | bc -l) -eq 1 || \
+          $(echo "$length < 0" | bc -l) -eq 1 ]]; then
+        echo "Error: Negative dimensions not allowed"
+        return 1
+    fi
+
+    local volume=$(echo "$height * $width * $length" | bc -l)
     echo "$volume"
 }
 
